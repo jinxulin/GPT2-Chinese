@@ -25,12 +25,11 @@ def main():
 
     tokenizer.fit_on_texts(lines)
     vocab = list(tokenizer.index_word.values())
-    pre = ['[SEP]', '[CLS]', '[MASK]', '[PAD]', '[UNK]']
+    pre = ['[SEP]', '[CLS]', '[MASK]', '[PAD]', '[UNK]', '[10]', '[15]', '[30]']
     vocab = pre + vocab
     with open(args.vocab_file, 'w') as f:
-        for word in vocab[:args.vocab_size + 5]:
+        for word in vocab[:args.vocab_size + 8]:
             f.write(word + '\n')
-
 
 if __name__ == "__main__":
     main()

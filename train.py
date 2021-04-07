@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 import transformers
 import torch
 import os
@@ -59,7 +60,7 @@ def main():
     parser.add_argument('--fp16_opt_level', default='O1', type=str, required=False)
     parser.add_argument('--max_grad_norm', default=1.0, type=float, required=False)
     parser.add_argument('--num_pieces', default=100, type=int, required=False, help='将训练语料分成多少份')
-    parser.add_argument('--min_length', default=128, type=int, required=False, help='最短收录文章长度')
+    parser.add_argument('--min_length', default=2, type=int, required=False, help='最短收录文章长度')
     parser.add_argument('--output_dir', default='model/', type=str, required=False, help='模型输出路径')
     parser.add_argument('--pretrained_model', default='', type=str, required=False, help='模型训练起点路径')
     parser.add_argument('--writer_dir', default='tensorboard_summary/', type=str, required=False, help='Tensorboard路径')
